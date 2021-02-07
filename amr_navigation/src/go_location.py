@@ -9,7 +9,7 @@ def movebase_client():
     client.wait_for_server()
 
     goal = MoveBaseGoal()
-    goal.target_pose.header.frame_id = "home"
+    goal.target_pose.header.frame_id = "cnc"
     goal.target_pose.header.stamp = rospy.Time.now()
     goal.target_pose.pose.position.x = 0.0
     goal.target_pose.pose.orientation.w = 1.0

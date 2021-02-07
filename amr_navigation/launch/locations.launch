@@ -1,9 +1,9 @@
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="cnc_location" args="-3.0 -8.5 0.0 0.0 0.0 0.0 map warehouse 50"/>
+  <node pkg="tf" type="static_transform_publisher" name="warehouse_location" args="-3.0 -8.5 0.0 0.0 0.0 0.0 map warehouse 50"/>
 
   <node pkg="tf" type="static_transform_publisher" name="home_location" args="-2.7 8.1 0.0 0.0 0.0 0.0 map home 50"/>
 
-  <node pkg="tf" type="static_transform_publisher" name="warehouse_location" args="3.7 4.5 0.0 0.0 0.0 0.0 map cnc 50"/>
+  <node pkg="tf" type="static_transform_publisher" name="cnc_location" args="3.7 4.5 0.0 0.0 0.0 0.0 map cnc 50"/>
 
 </launch>

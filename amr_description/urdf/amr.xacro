@@ -285,8 +285,8 @@
             <rightJoint>base_link_driving_wheel_M1_joint</rightJoint>
             <wheelSeparation>${clad+dwt}</wheelSeparation>
             <wheelDiameter>${dwd}</wheelDiameter>
-            <wheelAcceleration>0.1</wheelAcceleration>
-            <wheelTorque>20</wheelTorque>
+            <wheelAcceleration>0.2</wheelAcceleration>
+            <wheelTorque>30</wheelTorque>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>

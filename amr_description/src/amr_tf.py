@@ -17,6 +17,11 @@ if __name__ == '__main__':
   bcasterrr_blink = tf.TransformBroadcaster()
   bcasterrl_blink = tf.TransformBroadcaster()
 
+  bwcasterfr_blink = tf.TransformBroadcaster()
+  bwcasterfl_blink = tf.TransformBroadcaster()
+  bwcasterrr_blink = tf.TransformBroadcaster()
+  bwcasterrl_blink = tf.TransformBroadcaster()
+
   rate = rospy.Rate(50)
 
   while not rospy.is_shutdown():
@@ -49,12 +54,28 @@ if __name__ == '__main__':
         tf.transformations.quaternion_from_euler(0, 0, 3.1416),
         rospy.Time.now(),"caster_wheel_M1_link","base_link")
 
-    bcasterfl_blink.sendTransform((-0.25, -0.20, -0.05),
+    bcasterrl_blink.sendTransform((-0.25, -0.20, -0.05),
         tf.transformations.quaternion_from_euler(0, 0, 3.1416),
         rospy.Time.now(),"caster_wheel_M4_link","base_link")
 
-    bcasterfl_blink.sendTransform((-0.25, 0.20, -0.05),
+    bcasterrl_blink.sendTransform((-0.25, 0.20, -0.05),
         tf.transformations.quaternion_from_euler(0, 0, 3.1416),
         rospy.Time.now(),"caster_wheel_M3_link","base_link")
+
+    bwcasterfr_blink.sendTransform((0.047, 0.0, -0.04875),
+        tf.transformations.quaternion_from_euler(1.570796, 0, 0),
+        rospy.Time.now(),"wheel_M2_link","caster_wheel_M2_link")
+
+    bwcasterfl_blink.sendTransform((0.047, 0.0, -0.04875),
+        tf.transformations.quaternion_from_euler(1.570796, 0, 0),
+        rospy.Time.now(),"wheel_M1_link","caster_wheel_M1_link")
+
+    bwcasterrl_blink.sendTransform((0.047, 0.0, -0.04875),
+        tf.transformations.quaternion_from_euler(1.570796, 0, 0),
+        rospy.Time.now(),"wheel_M4_link","caster_wheel_M4_link")
+
+    bwcasterrl_blink.sendTransform((0.047, 0.0, -0.04875),
+        tf.transformations.quaternion_from_euler(1.570796, 0, 0),
+        rospy.Time.now(),"wheel_M3_link","caster_wheel_M3_link")
 
     rate.sleep()
